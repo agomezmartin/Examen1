@@ -1,0 +1,278 @@
+  <div class="container">
+  
+  <h1 class="display-5">RELLENA TU CV</h1>
+  
+<!-- ----------------------------------------------------------- -->  
+
+  <form class="was-validated">
+
+    <div id="enviar">
+    <fieldset name="datosPersonalesFinales" class="card" style="position: {{p_datos_position}}; visibility: {{p_datos_visibility}};">
+        <legend>DATOS PERSONALES</legend>
+
+      <div class="form-group">
+        <p><span>Nombre: </span> {{nombre.value}}</p>
+        <p><span>Apellidos: </span>{{apellidos.value}}</p>
+        <p><span>Contraseña: </span>{{contrasenna.value}}</p>
+        <p><span>DNI: </span>{{dni.value}}</p>
+        <p><span>Sexo: </span>{{sexo}}</p>
+      </div>
+
+      </fieldset>
+
+    <fieldset name="formacionFinal" class="card" style="position: {{p_formacion_position}}; visibility: {{p_formacion_visibility}};">
+        <legend>FORMACIÓN</legend>
+
+        <div class="form-group">
+        <p><span>Título: </span>{{tituloFormacion.value}}</p>
+        <p><span>Nombre del Curso: </span>{{nombreCurso.value}}</p>
+        <p><span>Fecha inicio: </span>{{fechaInicioCurso.value}}</p>
+        <p><span>Fecha fin: </span>{{fechaFinCurso.value}}</p>
+        <p><span>Formación en curso: </span>{{formacionEnCurso}}</p>
+        <p><span>Centro: </span>{{centroFormativo.value}}</p>
+        </div>
+    </fieldset>
+
+    <fieldset name="experienciaFinal" class="card" style="position: {{p_experiencia_position}}; visibility: {{p_experiencia_visibility}};">
+        <legend>EXPERIENCIA</legend>
+
+        <div class="form-group">
+        <p><span>Puesto: </span>{{puesto.value}}</p>
+        <p><span>Empresa: </span>{{empresa.value}}</p>
+        <p><span>Descripción del puesto: </span>«{{descripcionPuesto.value}}»</p>
+        <p><span>Fecha inicio: </span>{{fechaInicioPuesto.value}}</p>
+        <p><span>Fecha fin: </span>{{fechaFinPuesto.value}}</p>
+        <p><span>Puesto en curso: </span>{{puestoEnCurso}}</p>
+        <p><span>Salario anual percibido: </span>{{salarioAnual.value}}€</p>
+          </div>
+      </fieldset>
+
+    <fieldset name="idiomasFinal" class="card" style="position: {{p_idioma_position}}; visibility: {{p_idioma_visibility}};">
+        <legend>IDIOMAS</legend>
+        <div class="form-group">
+        <p><span>Idioma: </span>{{idioma}}</p>
+        <p><span>Nivel hablado: </span>{{nivelHablado}}</p>
+        <p><span>Nivel escrito: </span>{{nivelEscrito}}</p>
+        <p><span>Nivel leído: </span>{{nivelLeido}}</p>
+        </div>
+    </fieldset>
+
+    </div>
+
+<!-- ----------------------------------------------------------- -->  
+
+  <fieldset name="datos personales">
+  
+  	<legend>DATOS PERSONALES</legend>
+  	
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" #nombre id="nombre" placeholder="Nombre" />
+  </div>
+
+  <div class="form-group">
+    <label for="apellidos">Apellidos</label>
+    <input type="text" class="form-control" #apellidos id="apellidos" placeholder="Apellidos" />
+  </div>
+
+  <div class="form-group">
+    <label for="contraseña">Contraseña</label>
+    <input type="password" class="form-control" #contrasenna id="contraseña" placeholder="Contraseña" />
+  </div>
+
+  <div class="form-group">
+    <label for="dni">DNI</label>
+    <input type="text" class="form-control" #dni id="dni" placeholder="DNI" />
+  </div>
+
+  <div class="form-group">
+   	<label for="sexo">Sexo</label>
+
+        <div class="form-check">
+		    <label for="hombre" class="form-check-label">Hombre:</label>
+		    <input type="radio" class="form-check-input" id="hombre" name="sexo" checked />
+		</div>
+    </div>
+
+
+		<div class="form-check">
+  
+		    <label for="mujer" class="form-check-label">Mujer:</label>
+		    <input type="radio" class="form-check-input" id="mujer" name="sexo" />
+
+    </div>
+
+  <div class="form-group">
+    <label for="exampleInputFile">Incluir mi foto:</label>
+    <input type="file" id="exampleInputFile" />
+    <p class="help-block">Seleccione un archivo.</p>
+  </div>
+
+  <button type="submit" class="btn btn-outline-success" (click)="guardarDatosPersonales()">Guardar datos personales</button>
+
+</fieldset>
+
+<!-- ----------------------------------------------------------- -->  
+
+<fieldset name="formacion">
+
+  	<legend>FORMACIÓN</legend>
+
+    <div class="form-group">
+    <label for="titulo">Título</label>
+    <input type="text" class="form-control" #tituloFormacion id="titulo" placeholder="Título"/>
+  </div>
+  
+    <div class="form-group">
+    <label for="curso">Nombre del curso</label>
+    <input type="text" class="form-control" #nombreCurso id="curso" placeholder="Curso"/>
+  </div>
+
+	<!-- PERÍODO FORMACIÓN -->
+  
+    <div class="form-group">
+    <label for="fechaInicio">Fecha de inicio</label>
+    <input type="date" class="form-control" #fechaInicioCurso id="fechaInicio" placeholder="Fecha de inicio"/>
+  </div>
+  
+    <div class="form-group">
+    <label for="fechaFin">Fecha de fin</label>
+    <input type="date" class="form-control" #fechaFinCurso id="fechaFin" placeholder="Fecha fin"/>
+  </div>
+  
+    <div class="form-group">
+    <label for="enCurso">Actualmente</label>
+    <input type="checkbox" id="enCurso" placeholder="Actualmente"/>
+  </div>
+	
+	<!-- -------------------- -->  
+
+    <div class="form-group">
+    <label for="centro">Centro</label>
+    <input type="text" class="form-control" #centroFormativo id="centro" placeholder="Centro"/>
+  </div>
+
+    <div class="form-group">
+    <label for="enCurso">No quiero que la empresa vea estos estudios</label>
+    <input type="checkbox" id="enCurso" placeholder="Actualmente"/>
+  </div>
+  
+  <button type="submit" class="btn btn-outline-success" (click)="guardarFormacion()">Añadir formación</button>
+  
+
+</fieldset>
+<!-- ----------------------------------------------------------- -->  
+
+<fieldset name="experiencia">
+
+  	<legend>EXPERIENCIA</legend>
+
+  <div class="form-group">
+    <label for="puesto">Puesto</label>
+    <input type="text" class="form-control" #puesto id="puesto" placeholder="Puesto"/>
+  </div>
+  
+  <div class="form-group">
+    <label for="puesto">Empresa</label>
+    <input type="text" class="form-control" #empresa id="empresa" placeholder="Empresa"/>
+  </div>
+  
+  <div class="form-group">
+    <label for="descripcionPuesto">Descripción del puesto</label>
+    <input type="text" class="form-control" #descripcionPuesto id="descripcionPuesto" placeholder="Descripción del puesto"/>
+  </div>
+  
+
+	<!-- PERÍODO PUESTO DE TRABAJO -->
+
+    <div class="form-group">
+    <label for="fechaInicio">Fecha de inicio</label>
+    <input type="date" class="form-control" #fechaInicioPuesto id="fechaInicio" placeholder="Fecha de inicio"/>
+  </div>
+  
+    <div class="form-group">
+    <label for="fechaFin">Fecha de fin</label>
+    <input type="date" class="form-control" #fechaFinPuesto id="fechaFin" placeholder="Fecha fin"/>
+  </div>
+  
+    <div class="form-group">
+    <label for="enCurso">Actualmente</label>
+    <input type="checkbox" id="enCurso" placeholder="Actualmente"/>
+  </div>
+  
+	<!-- -------------------- -->  
+
+  <div class="form-group">
+    <label for="sueldo">Salario anual percibido</label>
+    <input type="number" class="form-control" #salarioAnual id="sueldo" placeholder="Sueldo anual en €"/>
+  </div>
+  
+  <button type="submit" class="btn btn-outline-success" (click)="guardarExperiencia()">Añadir puesto</button>
+  
+
+</fieldset>
+
+<!-- ----------------------------------------------------------- -->  
+
+<fieldset name="idiomas">
+
+  	<legend>IDIOMAS</legend>
+  	
+  	<!-- ELIGE UN IDIOMA -->
+    <div class="form-group">
+    <label for="idioma">Elige un idioma</label>
+
+  	<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+	  <option value="español" selected>Español</option>
+	  <option value="alemán">Alemán</option>
+	  <option value="ingles">Inglés</option>
+	  <option value="frances">Francés</option>
+	</select>
+    </div>
+
+
+  	<!-- NIVEL HABLADO -->
+    <div class="form-group">
+    <label for="idioma">Nivel hablado</label>
+
+  	<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+	  <option value="nivelAlto" selected>Alto</option>
+	  <option value="nivelMedio">Medio</option>
+	  <option value="niveBajo">Bajo</option>
+	</select>
+    </div>
+
+  	<!-- NIVEL ESCRITO -->
+    <div class="form-group">
+        <label for="idioma">Nivel escrito</label>
+
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option value="nivelAlto" selected>Alto</option>
+        <option value="nivelMedio">Medio</option>
+        <option value="niveBajo">Bajo</option>
+        </select>
+
+        </div>
+
+  	<!-- NIVEL LEÍDO -->
+    <div class="form-group">
+        <label for="idioma">Nivel leído</label>
+
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option value="nivelAlto" selected>Alto</option>
+        <option value="nivelMedio">Medio</option>
+        <option value="niveBajo">Bajo</option>
+        </select>
+
+    </div>
+
+	  <button type="submit" class="btn btn-outline-success" (click)="guardarIdioma()">Añadir idioma</button>
+
+</fieldset>
+
+<button id="cv" type="submit" class="btn btn-outline-primary">Envíar CV</button>
+<button id="cv" type="reset" class="btn btn-outline-primary">Borrar</button>
+
+</form>
+
+</div> <!-- cierre CONTAINER -->
