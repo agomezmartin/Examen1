@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TotalComponent } from './total.component';
+import { I18nDigitalComponent } from './i18n-digital.component';
 
-describe('TotalComponent', () => {
-  let component: TotalComponent;
-  let fixture: ComponentFixture<TotalComponent>;
+describe('I18nDigitalComponent', () => {
+  let component: I18nDigitalComponent;
+  let fixture: ComponentFixture<I18nDigitalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TotalComponent ]
+      declarations: [ I18nDigitalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TotalComponent);
+    fixture = TestBed.createComponent(I18nDigitalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
